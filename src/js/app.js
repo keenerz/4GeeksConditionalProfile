@@ -40,18 +40,47 @@ function render(variables = {}) {
 
   let city = variables.city;
   if (variables.city == null) city = "Miami";
+
+  let country = variables.country;
+  if (variables.country == null) country = "USA";
+
+  let twitter = variables.twitter;
+  if (variables.twitter == null) twitter = "https://twitter.com/4geeksacademy";
+
+  let github = variables.github;
+  if (variables.github == "alesanchezr")
+    github = "https://github.com/4geeksacademy";
+
+  let linkedin = variables.linkedin;
+  if (variables.linkedin == null)
+    linkedin = "https://linkedin.com/4geeksacademy";
+
+  let instagram = variables.instagram;
+  if (variables.instagram == null)
+    instagram = "https://instagram.com/4geeksacademy";
+
+  let coverPhoto = variables.background;
+  if (
+    variables.background ==
+    "https://images.unsplash.com/photo-1511974035430-5de47d3b95da"
+  )
+    coverPhoto = "https://images.unsplash.com/photo-1511974035430-5de47d3b95da";
+
+  let avatar = variables.avatarURL;
+  if (variables.avatarURL == "https://randomuser.me/api/portraits/women/42.jpg")
+    avatar = "https://randomuser.me/api/portraits/women/42.jpg";
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${name} ${lastname}</h1>
           <h2>${role}</h2>
-          <h3>${city}, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h3>${city}, ${country}</h3>
+          <ul class=${variables.socialMediaPosition}>
+            <li><a href=${twitter}><i class="fab fa-twitter"></i></a></li>
+            <li><a href=${github}><i class="fab fa-github"></i></a></li>
+            <li><a href=${linkedin}><i class="fab fa-linkedin"></i></a></li>
+            <li><a href=${instagram}><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
